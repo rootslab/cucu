@@ -1,0 +1,35 @@
+{
+  "name": "cucu",
+  "version": "0.1.0",
+  "description": "Cucu, a tiny module to schedule repeated execution of (single process) methods/tasks.",
+  "homepage": "https://github.com/rootslab/cucu",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rootslab/cucu.git"
+  },
+  "keywords": [
+    "cucu",
+    "tasks",
+    "sceduled execution",
+    "timers"
+  ],
+  "author": {
+    "name": "Guglielmo Ferri",
+    "email": "44gatti@gmail.com"
+  },
+  "dependencies": {
+    },
+  "main": "index",
+  "engines": {
+    "node": ">=0.6.x"
+  },
+  "scripts": {
+    "test": "bash test/run.sh",
+    "bench": "bash bench/run.sh"
+  },
+  "license": "MIT",
+  "readmeFilename": "Readme.md",
+  "bugs": {
+    "url": "https://github.com/rootslab/cucu/issues"
+  }
+}
