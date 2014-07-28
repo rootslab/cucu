@@ -1,17 +1,15 @@
 ###Cucu
 
 [![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rootslab/cucu#mit-license)
+[![GITTIP](http://img.shields.io/gittip/rootslab.svg)](https://www.gittip.com/rootslab/)
+[![NPM DOWNLOADS](http://img.shields.io/npm/dm/cucu.svg)](http://npm-stat.com/charts.html?package=cucu)
 
 [![NPM VERSION](http://img.shields.io/npm/v/cucu.svg)](https://www.npmjs.org/package/cucu)
 [![TRAVIS CI BUILD](http://img.shields.io/travis/rootslab/cucu.svg)](http://travis-ci.org/rootslab/cucu)
 [![BUILD STATUS](http://img.shields.io/david/rootslab/cucu.svg)](https://david-dm.org/rootslab/cucu)
+[![DEVDEPENDENCY STATUS](http://img.shields.io/david/dev/rootslab/cucu.svg)](https://david-dm.org/rootslab/cucu#info=devDependencies)
 
 [![NPM GRAPH1](https://nodei.co/npm-dl/cucu.png)](https://nodei.co/npm/cucu/)
-
-[![GITHUB tag](http://img.shields.io/github/tag/rootslab/cucu.svg)](https://github.com/rootslab/cucu/tags)
-[![ISSUES](http://img.shields.io/github/issues/rootslab/cucu.svg)](https://github.com/rootslab/cucu/issues)
-[![GITTIP](http://img.shields.io/gittip/rootslab.svg)](https://www.gittip.com/rootslab/)
-[![NPM DOWNLOADS](http://img.shields.io/npm/dm/cucu.svg)](http://npm-stat.com/charts.html?package=cucu)
 
 [![NPM GRAPH2](https://nodei.co/npm/cucu.png?downloads=true&stars=true)](https://nodei.co/npm/cucu/)
 
