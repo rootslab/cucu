@@ -58,9 +58,8 @@ Cucu.running : Number
 
 ```javascript
 /*
- * Add a task; a task will be added only if there is no other task
- * running with this name/id.
- * It returns 1 if task is added, -1 otherwise.
+ * Add a task; a task will be added only if there is no other task already running with this name/id.
+ * It returns 1 if task is added, 0 if the same task id is already running, -1 if an error occurs.
  */
 Cucu#add( String id, Function fn [, Array args [, Object scope [, Number interval ] ] ] ) : Number
 
