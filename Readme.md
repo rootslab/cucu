@@ -68,7 +68,7 @@ Cucu#add( String id, Function fn [, Array args [, Object scope [, Number interva
  * Run a task by name/id.
  * It returns 1 if task is started, 0 if the task is already running, -1 if no task exists.
  */
-Cucu#run() : Number
+Cucu#run( String id [, Number interval ] ) : Number
 
 /*
  * Remove tasks by id/name; a task will be removed only if it is not currently running.
