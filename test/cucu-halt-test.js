@@ -26,7 +26,8 @@ var log = console.log
     , fn1 = function () {
         log( '> scheduled task %s.', inspect( id1 ) );
         log( '> check fn scope, should be: %s.', inspect( scope ) );
-        assert.deepEqual( this, scope,  'got: ' + inspect( this ) );    }
+        assert.deepEqual( this, scope,  'got: ' + inspect( this ) );
+    }
     , args = [ 0, 1, 2, 3 ]
     , scope = { a : 1 }
     , interval = 1000
@@ -47,10 +48,10 @@ op = qq.run( id1, interval1 );
 log( '- check Cucu.running property, should be: %s.', inspect( 2 ) );
 assert.ok( qq.running === 2, 'got: ' + inspect( qq.running ) );
 
-log( '- #stop tasks, ids: %s.', inspect( [ id0, noid, id1, noid ] ) );
-op = qq.stop( [ id0, noid, id1, noid ] );
+log( '- #halt all tasks' );
+op = qq.halt();
 
-log( '- check #stop operation result, should be: %s.', inspect( [ id0, id1 ] ) );
+log( '- check #halt operation result, should be: %s.', inspect( [ id0, id1 ] ) );
 assert.deepEqual( op, [ id0, id1 ], 'got: ' + inspect( op ) );
 
 log( '- check interval for task id: %s, should be: %s.', inspect( id0 ), inspect( null ) );
@@ -62,8 +63,8 @@ assert.equal( qq.tasks[ id1 ].status._idleTimeout, null, 'got: ' + inspect( qq.t
 log( '- check Cucu.running property, should be: %s.', inspect( 0 ) );
 assert.ok( qq.running === 0, 'got: ' + inspect( qq.running ) );
 
-log( '- #stop task, id: %s.', inspect( null ) );
-op = qq.stop( null );
+log( '- #halt all tasks.' );
+op = qq.halt( null );
 
-log( '- check #stop operation result, should be: %s.', inspect( [] ) );
+log( '- check #halt operation result, should be: %s.', inspect( [] ) );
 assert.deepEqual( op, [], 'got: ' + inspect( op ) );

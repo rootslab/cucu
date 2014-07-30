@@ -1,6 +1,6 @@
 {
   "name": "cucu",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Cucu, a tiny module to schedule repeated execution of (single process) methods/tasks.",
   "homepage": "https://github.com/rootslab/cucu",
   "repository": {
@@ -10,6 +10,10 @@
   "keywords": [
     "cucu",
     "tasks",
+    "task",
+    "schedule",
+    "setInterval"
+    "single process task"
     "sceduled execution",
     "timers"
   ],

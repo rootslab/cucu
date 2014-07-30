@@ -47,23 +47,17 @@ op = qq.run( id1, interval1 );
 log( '- check Cucu.running property, should be: %s.', inspect( 2 ) );
 assert.ok( qq.running === 2, 'got: ' + inspect( qq.running ) );
 
-log( '- #stop tasks, ids: %s.', inspect( [ id0, noid, id1, noid ] ) );
-op = qq.stop( [ id0, noid, id1, noid ] );
+log( '- #stop task, id: %s.', inspect( [ noid, id0 ] ) );
+op = qq.stop( [ noid, id0 ] );
 
-log( '- check #stop operation result, should be: %s.', inspect( [ id0, id1 ] ) );
-assert.deepEqual( op, [ id0, id1 ], 'got: ' + inspect( op ) );
+log( '- #awake all tasks.' );
+op = qq.awake();
 
-log( '- check interval for task id: %s, should be: %s.', inspect( id0 ), inspect( null ) );
-assert.equal( qq.tasks[ id0 ].status._idleTimeout, null, 'got: ' + inspect( qq.tasks[ id1 ].status._idleTimeout ) );
+log( '- check #awke operation result, should be: %s.', inspect( [ id0 ] ) );
+assert.deepEqual( op, [ id0 ], 'got: ' + inspect( op ) );
 
-log( '- check interval for task id: %s, should be: %s.', inspect( id1 ), inspect( null ) );
-assert.equal( qq.tasks[ id1 ].status._idleTimeout, null, 'got: ' + inspect( qq.tasks[ id1 ].status._idleTimeout ) );
+log( '- check Cucu.running property, should be: %s.', inspect( 2 ) );
+assert.ok( qq.running === 2, 'got: ' + inspect( qq.running ) );
 
-log( '- check Cucu.running property, should be: %s.', inspect( 0 ) );
-assert.ok( qq.running === 0, 'got: ' + inspect( qq.running ) );
-
-log( '- #stop task, id: %s.', inspect( null ) );
-op = qq.stop( null );
-
-log( '- check #stop operation result, should be: %s.', inspect( [] ) );
-assert.deepEqual( op, [], 'got: ' + inspect( op ) );
+log( '- #halt all tasks.' );
+op = qq.halt();

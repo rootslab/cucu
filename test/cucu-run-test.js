@@ -86,4 +86,4 @@ setTimeout( function () {
     log( '- check scheduled task status, should be:', inspect( -1 ) );
     assert.ok( ! ~ qq.tasks[ id0 ].status, 'got: ' + inspect( qq.tasks[ id0 ].status ) );
 
-}, 4000 );
+}, 3000 );
