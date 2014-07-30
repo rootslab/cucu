@@ -18,12 +18,20 @@ var log = console.log
     , id = 'task0'
     , fn = function () {
         var arr = slice.call( arguments )
+            , env = this
+            ;
+
         log( '> check fn scheduled task arguments, should be', inspect( args ) );
         assert.deepEqual( arr, args,  'got: ' + inspect( args ) );
+
         log( '> now, stop scheduled task.' );
         qq.stop( id );
+
         log( '- check scheduled task status, should be:', inspect( -1 ) );
         assert.ok( ! ~ qq.tasks[ id ].status, 'got: ' + inspect( qq.tasks[ id ].status ) );
+
+        log( '> check fn scope, should be:', inspect( scope ) );
+        assert.deepEqual( env, scope,  'got: ' + inspect( scope ) );
     }
     , args = [ 0, 1, 2, 3 ]
     , scope = { a : 1 }
@@ -31,8 +39,7 @@ var log = console.log
     , op = null
     ;
 
-
-log( '- #add a task id:', inspect( id ) );
+log( '- #add a task with id:', inspect( id ) );
 op = qq.add( id, fn, args, scope, interval );
 
 log( '- check #add operation result, should be:', inspect( 1 ) );
