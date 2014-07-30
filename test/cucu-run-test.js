@@ -28,6 +28,8 @@ var log = console.log
     , args = [ 0, 1, 2, 3 ]
     , scope = { a : 1 }
     , interval = 1000
+    , interval0 = 700
+    , interval1 = 1300
     , op = null
     ;
 
@@ -35,29 +37,35 @@ log( '- #add 2 tasks with id:', inspect( [ id0, id1 ] ) );
 op = qq.add( id0, fn0, args, scope, interval );
 op = qq.add( id1, fn1, args, scope, interval );
 
-log( '- now run task id:', inspect( id0 ) );
-op = qq.run( id0 );
+log( '- now run task id: %s, with interval: %s', inspect( id0 ), inspect( interval0 ) );
+op = qq.run( id0, interval0 );
 
 log( '- check #run operation result, should be:', inspect( 1 ) );
 assert.ok( op === 1, 'got: ' + inspect( op ) );
 
-log( '- now run task id:', inspect( id1 ) );
-op = qq.run( id1 );
+log( '- check interval for task id: %s, should be:', inspect( id0 ), inspect( interval0 ) );
+assert.equal( qq.tasks[ id0 ].status._idleTimeout, interval0, 'got: ' + inspect( op ) );
+
+log( '- now run task id: %s, with interval: %s', inspect( id1 ), inspect( interval1 ) );
+op = qq.run( id1, interval1 );
 
 log( '- check #run operation result, should be:', inspect( 1 ) );
 assert.ok( op === 1, 'got: ' + inspect( op ) );
+
+log( '- check interval for task id: %s, should be:', inspect( id1 ), inspect( interval1 ) );
+assert.equal( qq.tasks[ id1 ].status._idleTimeout, interval1, 'got: ' + inspect( op ) );
 
 log( '- check Cucu.running property, should be:', inspect( 2 ) );
 assert.ok( qq.running === 2, 'got: ' + inspect( qq.running ) );
 
 log( '- now try to re-run task id:', inspect( id0 ) );
-op = qq.run( id0 );
+op = qq.run( id0, 2000 );
 
 log( '- check #run operation result, should be:', inspect( 0 ) );
 assert.ok( op === 0, 'got: ' + inspect( op ) );
 
 log( '- now try to re-run task id:', inspect( id1 ) );
-op = qq.run( id1 );
+op = qq.run( id1, 2000 );
 
 log( '- check #run operation result, should be:', inspect( 0 ) );
 assert.ok( op === 0, 'got: ' + inspect( op ) );
