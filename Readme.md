@@ -50,6 +50,10 @@ new Cucu()
  */
 Cucu.running : Number
 
+/*
+ * An obj/hash containing tasks by id/key/name.
+ */
+Cucu.tasks : Object
 ```
 
 ###Methods
@@ -64,10 +68,10 @@ Cucu.running : Number
 Cucu#add( String id, Function fn [, Array args [, Object scope [, Number interval ] ] ] ) : Number
 
 /*
- * Run a task by name/id.
+ * Run a task by name/id. Optionally you can specify interval and/or the max number of task executions.
  * It returns 1 if task is started, 0 if the task is already running, -1 if no task exists.
  */
-Cucu#run( String id [, Number interval ] ) : Number
+Cucu#run( String id [, Number interval [, Number times ] ] ) : Number
 
 /*
  * Remove tasks by id/name; a task will be removed only if it is not currently running.

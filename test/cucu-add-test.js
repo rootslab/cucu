@@ -21,16 +21,16 @@ var log = console.log
             , env = this
             ;
 
-        log( '> check fn scheduled task arguments, should be', inspect( args ) );
-        assert.deepEqual( arr, args,  'got: ' + inspect( args ) );
+        log( '> check fn scheduled task arguments, should be: %s.', inspect( args ) );
+        assert.deepEqual( arr, args,  'got: ' + inspect( arr ) );
 
         log( '> now, stop scheduled task.' );
         qq.stop( id );
 
-        log( '- check scheduled task status, should be:', inspect( -1 ) );
+        log( '- check scheduled task status, should be: %s.', inspect( -1 ) );
         assert.ok( ! ~ qq.tasks[ id ].status, 'got: ' + inspect( qq.tasks[ id ].status ) );
 
-        log( '> check fn scope, should be:', inspect( scope ) );
+        log( '> check fn scope, should be: %s.', inspect( scope ) );
         assert.deepEqual( env, scope,  'got: ' + inspect( scope ) );
     }
     , args = [ 0, 1, 2, 3 ]
@@ -39,23 +39,23 @@ var log = console.log
     , op = null
     ;
 
-log( '- #add a task with id:', inspect( id ) );
+log( '- #add a task with id: %s.', inspect( id ) );
 op = qq.add( id, fn, args, scope, interval );
-
-log( '- check #add operation result, should be:', inspect( 1 ) );
+log( '- check #add operation result, should be: %s.', inspect( qq ) );
+log( '- check #add operation result, should be: %s.', inspect( 1 ) );
 assert.ok( op === 1, 'got: ' + inspect( op ) );
 
-log( '- re-#add the same task id:', inspect( id ) );
+log( '- re-#add the same task id: %s.', inspect( id ) );
 op = qq.add( id, fn, args, scope, interval );
 
-log( '- check #add operation result, should be:', inspect( 1 ) );
+log( '- check #add operation result, should be: %s.', inspect( 1 ) );
 assert.ok( op === 1, 'got: ' + inspect( op ) );
 
-log( '- now run task id:', inspect( id ) );
+log( '- now run task id: %s.', inspect( id ) );
 op = qq.run( id );
 
-log( '- #add the same task id:', inspect( id ) );
+log( '- #add the same task id: %s.', inspect( id ) );
 op = qq.add( id, fn, args, scope, interval );
 
-log( '- check #add operation result, should fail with:', inspect( 0 ) );
+log( '- check #add operation result, should fail with: %s.', inspect( 0 ) );
 assert.ok( op === 0, 'got: ' + inspect( op ) );

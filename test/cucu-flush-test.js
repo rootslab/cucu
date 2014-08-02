@@ -29,19 +29,19 @@ var log = console.log
     , op = null
     ;
 
-log( '- #add a task with id:', inspect( id0 ) );
+log( '- #add a task with id: %s.', inspect( id0 ) );
 op = qq.add( id0, fn0, args, scope, interval );
 
-log( '- #add a task with id:', inspect( id1 ) );
+log( '- #add a task with id: %s.', inspect( id1 ) );
 op = qq.add( id1, fn1, args, scope, interval );
 
-log( '- now run task id:', inspect( id0 ) );
+log( '- now run task id: %s.', inspect( id0 ) );
 op = qq.run( id0 );
 
-log( '- now run task id:', inspect( id1 ) );
+log( '- now run task id: %s.', inspect( id1 ) );
 op = qq.run( id1 );
 
-log( '- try #flush operation with running tasks, it should succeed and returns:', inspect( [ id0, id1 ] ) );
+log( '- try #flush operation with running tasks, it should succeed and returns: %s.', inspect( [ id0, id1 ] ) );
 op = qq.flush();
 assert.deepEqual( op, [ id0, id1 ], 'got: ' + inspect( op ) );
 
