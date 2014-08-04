@@ -28,7 +28,7 @@ var log = console.log
         qq.stop( id );
 
         log( '- check scheduled task status, should be: %s.', inspect( -1 ) );
-        assert.ok( ! ~ qq.tasks[ id ].status, 'got: ' + inspect( qq.tasks[ id ].status ) );
+        assert.ok( ! ~ qq.ttable[ id ].status, 'got: ' + inspect( qq.ttable[ id ].status ) );
 
         log( '> check fn scope, should be: %s.', inspect( scope ) );
         assert.deepEqual( env, scope,  'got: ' + inspect( scope ) );

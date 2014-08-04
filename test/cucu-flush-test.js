@@ -45,8 +45,8 @@ log( '- try #flush operation with running tasks, it should succeed and returns: 
 op = qq.flush();
 assert.deepEqual( op, [ id0, id1 ], 'got: ' + inspect( op ) );
 
-log( '- now no task should be present: %s.', inspect( Object.keys( qq.tasks ) ) );
-assert.ok ( Object.keys( qq.tasks ).length === 0 );
+log( '- now no task should be present: %s.', inspect( Object.keys( qq.ttable ) ) );
+assert.ok ( Object.keys( qq.ttable ).length === 0 );
 
 log( '- check Cucu.running property, should be: %s.', inspect( 0 ) );
 assert.ok( qq.running === 0, 'got: ' + inspect( qq.running ) );

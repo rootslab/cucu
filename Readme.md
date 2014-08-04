@@ -51,9 +51,9 @@ new Cucu()
 Cucu.running : Number
 
 /*
- * An obj/hash containing tasks by id/key/name.
+ * Task table, an obj/hash containing tasks by id/key/name.
  */
-Cucu.tasks : Object
+Cucu.ttable : Object
 ```
 
 ###Methods

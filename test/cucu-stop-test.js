@@ -54,10 +54,10 @@ log( '- check #stop operation result, should be: %s.', inspect( [ id0, id1 ] ) )
 assert.deepEqual( op, [ id0, id1 ], 'got: ' + inspect( op ) );
 
 log( '- check interval for task id: %s, should be: %s.', inspect( id0 ), inspect( null ) );
-assert.equal( qq.tasks[ id0 ].status._idleTimeout, null, 'got: ' + inspect( qq.tasks[ id1 ].status._idleTimeout ) );
+assert.equal( qq.ttable[ id0 ].status._idleTimeout, null, 'got: ' + inspect( qq.ttable[ id1 ].status._idleTimeout ) );
 
 log( '- check interval for task id: %s, should be: %s.', inspect( id1 ), inspect( null ) );
-assert.equal( qq.tasks[ id1 ].status._idleTimeout, null, 'got: ' + inspect( qq.tasks[ id1 ].status._idleTimeout ) );
+assert.equal( qq.ttable[ id1 ].status._idleTimeout, null, 'got: ' + inspect( qq.ttable[ id1 ].status._idleTimeout ) );
 
 log( '- check Cucu.running property, should be: %s.', inspect( 0 ) );
 assert.ok( qq.running === 0, 'got: ' + inspect( qq.running ) );

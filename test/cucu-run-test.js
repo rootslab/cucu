@@ -46,7 +46,7 @@ log( '- check #run operation result, should be: %s.', inspect( 1 ) );
 assert.ok( op === 1, 'got: ' + inspect( op ) );
 
 log( '- check interval for task id: %s, should be: %s.', inspect( id0 ), inspect( interval0 ) );
-assert.equal( qq.tasks[ id0 ].status._idleTimeout, interval0, 'got: ' + inspect( op ) );
+assert.equal( qq.ttable[ id0 ].status._idleTimeout, interval0, 'got: ' + inspect( op ) );
 
 log( '- now run task id: %s, with interval: %s', inspect( id1 ), inspect( interval1 ) );
 op = qq.run( id1, interval1 );
@@ -55,7 +55,7 @@ log( '- check #run operation result, should be: %s.', inspect( 1 ) );
 assert.ok( op === 1, 'got: ' + inspect( op ) );
 
 log( '- check interval for task id: %s, should be: %s.', inspect( id1 ), inspect( interval1 ) );
-assert.equal( qq.tasks[ id1 ].status._idleTimeout, interval1, 'got: ' + inspect( op ) );
+assert.equal( qq.ttable[ id1 ].status._idleTimeout, interval1, 'got: ' + inspect( op ) );
 
 log( '- check Cucu.running property, should be: %s.', inspect( 2 ) );
 assert.ok( qq.running === 2, 'got: ' + inspect( qq.running ) );
@@ -86,6 +86,6 @@ setTimeout( function () {
     qq.stop( [ id0, id1 ] );
 
     log( '- check scheduled task status, should be: %s.', inspect( -1 ) );
-    assert.ok( ! ~ qq.tasks[ id0 ].status, 'got: ' + inspect( qq.tasks[ id0 ].status ) );
+    assert.ok( ! ~ qq.ttable[ id0 ].status, 'got: ' + inspect( qq.ttable[ id0 ].status ) );
 
 }, 3000 );

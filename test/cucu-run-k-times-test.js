@@ -25,11 +25,11 @@ var log = console.log
     , interval1 = 200
     , interval = 1000
     , fn0 = function () {
-        log( '> %s, left: %s.', inspect( id0 ), inspect( qq.tasks[ id0 ].times - 1 ) );
+        log( '> %s, left: %s.', inspect( id0 ), inspect( qq.ttable[ id0 ].times - 1 ) );
         ++cnt0;
     }
     , fn1 = function () {
-        log( '> %s, left: %s.', inspect( id1 ), inspect( qq.tasks[ id1 ].times - 1 ) );
+        log( '> %s, left: %s.', inspect( id1 ), inspect( qq.ttable[ id1 ].times - 1 ) );
         if ( ++cnt1 === 1 ) {
             log( '> check fn1 arguments, should be: %s.', inspect( otherargs ) );
             assert.deepEqual( slice.call( arguments ), otherargs, 'got: ' + inspect( slice.call( arguments ) ) );
@@ -60,6 +60,6 @@ setTimeout( function () {
     assert.ok( cnt1 === t1 );
  
     log( '- check scheduled task status, should be: %s.', inspect( -1 ) );
-    assert.ok( ! ~ qq.tasks[ id0 ].status, 'got: ' + inspect( qq.tasks[ id0 ].status ) );
+    assert.ok( ! ~ qq.ttable[ id0 ].status, 'got: ' + inspect( qq.ttable[ id0 ].status ) );
 
 }, 2500 );

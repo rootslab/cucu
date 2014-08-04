@@ -57,5 +57,5 @@ assert.deepEqual( op, [], 'got: ' + inspect( op ) );
 
 setTimeout( function () {
     log( '- now no task should be present.' );
-    assert.ok ( Object.keys( qq.tasks ).length === 0 );
+    assert.ok ( Object.keys( qq.ttable ).length === 0 );
 }, 2000 );
