@@ -52,6 +52,33 @@ Cucu.running : Number
 
 /*
  * Task table, an obj/hash containing tasks by id/key/name.
+ *
+ * A table entry for a task named 'id' is an obj/hash like:
+ *
+ *  ttable[ 'id' ] = {
+ *      id : 'id'
+ *      , fn : fn
+ *      , interval : Number
+ *      , args : Array
+ *      , scope : Object
+ *      , times : Number
+ *      , status : Number | Object
+ *      , run : Function
+ *      , stop : Function
+ *  };
+ *
+ * NOTE: Every entry contains the shortcuts to Cucu#run and Cucu#stop methods,
+ * already curried with their ids. For example. if exists a task named 'dumb'
+ * in the ttable, you could also use the methods below, for running, stopping
+ * or deleting an existing task:
+ * 
+ * Cucu.tasks.dumb.run( [ Number interval [, Array args [, Number times ] ] ] ) : Number
+ *
+ * Cucu.tasks.dumb.stop() : Array
+ *
+ * Cucu.tasks.dumb.del() : Array
+ *
+ *
  */
 Cucu.ttable : Object
 ```
