@@ -32,8 +32,8 @@ var log = console.log
         log( '> %s, left: %s.', inspect( id1 ), inspect( qq.tasks[ id1 ].times - 1 ) );
         if ( ++cnt1 === 1 ) {
             log( '> check fn1 arguments, should be: %s.', inspect( otherargs ) );
+            assert.deepEqual( slice.call( arguments ), otherargs, 'got: ' + inspect( slice.call( arguments ) ) );
         }
-        
     }
     , args = [ 0, 1, 2, 3 ]
     , otherargs = [ 9, 99, 999 ]
