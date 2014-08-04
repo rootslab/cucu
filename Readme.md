@@ -65,11 +65,12 @@ Cucu.running : Number
  *      , status : Number | Object
  *      , run : Function
  *      , stop : Function
+ *      , del : Function
  *  };
  *
  * NOTE: Every entry contains the shortcuts to Cucu#run and Cucu#stop methods,
- * already curried with their ids. For example. if exists a task named 'dumb'
- * in the ttable, you could also use the methods below, for running, stopping
+ * already curried with their own ids. For example, if exists a task named 'dumb'
+ * in the task table, you could also use the methods below, for running, stopping
  * or deleting an existing task:
  * 
  * Cucu.tasks.dumb.run( [ Number interval [, Array args [, Number times ] ] ] ) : Number
