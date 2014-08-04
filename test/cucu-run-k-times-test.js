@@ -30,9 +30,13 @@ var log = console.log
     }
     , fn1 = function () {
         log( '> %s, left: %s.', inspect( id1 ), inspect( qq.tasks[ id1 ].times - 1 ) );
-        ++cnt1;
+        if ( ++cnt1 === 1 ) {
+            log( '> check fn1 arguments, should be: %s.', inspect( otherargs ) );
+        }
+        
     }
     , args = [ 0, 1, 2, 3 ]
+    , otherargs = [ 9, 99, 999 ]
     , scope = { a : 1 }
     , op = null
     ;
@@ -42,10 +46,10 @@ op = qq.add( id0, fn0, args, scope, interval );
 op = qq.add( id1, fn1, args, scope, interval );
 
 log( '- now run task id: %s, with interval: %s', inspect( id0 ), inspect( interval0 ) );
-op = qq.run( id0, interval0, t0 );
+op = qq.run( id0, interval0, null, t0 );
 
 log( '- now run task id: %s, with interval: %s', inspect( id1 ), inspect( interval1 ) );
-op = qq.run( id1, interval1, t1 );
+op = qq.run( id1, interval1, otherargs, t1 );
 
 setTimeout( function () {
 

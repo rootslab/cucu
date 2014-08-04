@@ -62,19 +62,24 @@ Cucu.tasks : Object
 
 ```javascript
 /*
- * Add a task; a task will be added only if there is no other task already running with this name/id.
- * It returns 1 if task is added, 0 if the same task id is already running, -1 if an error occurs.
+ * Add a task; a task will be added only if there is no other task already 
+ * running with this name/id.
+ * It returns 1 if task is added, 0 if the same task id is already running,
+ * -1 if an error occurs.
  */
 Cucu#add( String id, Function fn [, Array args [, Object scope [, Number interval ] ] ] ) : Number
 
 /*
- * Run a task by name/id. Optionally you can specify interval and/or the max number of task executions.
- * It returns 1 if task is started, 0 if the task is already running, -1 if no task exists.
+ * Run a task by name/id. Optionally you can specify interval, optional arguments 
+ * and the  max number of task executions.
+ * It returns 1 if task is started, 0 if the task is already running, -1
+ * if no task exists.
  */
-Cucu#run( String id [, Number interval [, Number times ] ] ) : Number
+Cucu#run( String id [, Number interval [, Array args [, Number times ] ] ] ) : Number
 
 /*
- * Remove tasks by id/name; a task will be removed only if it is not currently running.
+ * Remove tasks by id/name; a task will be removed only if it is not
+ * currently running.
  * It returns a list of ids/names for all the removed tasks.
  */
 Cucu#del( String id | Array ids ) : Array
