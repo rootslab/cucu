@@ -61,23 +61,30 @@ Cucu.running : Number
  *      , interval : Number
  *      , args : Array
  *      , scope : Object
- *      , times : Number
  *      , status : Number | Object
+ *      , times : Number
+ *      // timestamps for task start, current iteration and task stop/halt/end.
+ *      , stime : Number
+ *      , itime : Number
+ *      , etime : Number
+ *      // get task time infos
+ *      , timetable : Function
+ *      // Cucu method shortcuts
  *      , run : Function
  *      , stop : Function
  *      , del : Function
  *  };
  *
- * NOTE: Every entry contains the shortcuts to Cucu#run and Cucu#stop methods,
- * already curried with their own ids. For example, if exists a task named 'dumb'
- * in the task table, you could also use the methods below, for running, stopping
- * or deleting an existing task:
+ * NOTE: Every entry contains shortcuts to Cucu#run, #stop and #del methods, already
+ * curried with their own ids. For example, if exists a task named 'dumb' in the task
+ * table, you could also use the methods below, for running, stopping or deleting an
+ * existing task:
  * 
- * Cucu.tasks.dumb.run( [ Number interval [, Array args [, Number times ] ] ] ) : Number
+ * Cucu.ttable.dumb.run( [ Number interval [, Array args [, Number times ] ] ] ) : Number
  *
- * Cucu.tasks.dumb.stop() : Array
+ * Cucu.ttable.dumb.stop() : Array
  *
- * Cucu.tasks.dumb.del() : Array
+ * Cucu.ttable.dumb.del() : Array
  *
  *
  */
@@ -90,24 +97,23 @@ Cucu.ttable : Object
 
 ```javascript
 /*
- * Add a task; a task will be added only if there is no other task already 
- * running with this name/id.
- * It returns 1 if task is added, 0 if the same task id is already running,
- * -1 if an error occurs.
+ * Add a task; a task will be added only if there is no other task already running
+ * with this name/id.
+ * It returns 1 if task is added, 0 if the same task id is already running, -1 if
+ * an error occurs.
  */
 Cucu#add( String id, Function fn [, Array args [, Object scope [, Number interval ] ] ] ) : Number
 
 /*
  * Run a task by name/id. Optionally you can specify interval, optional arguments 
  * and the  max number of task executions.
- * It returns 1 if task is started, 0 if the task is already running, -1
- * if no task exists.
+ * It returns 1 if task is started, 0 if the task is already running, -1 if no task
+ * exists.
  */
 Cucu#run( String id [, Number interval [, Array args [, Number times ] ] ] ) : Number
 
 /*
- * Remove tasks by id/name; a task will be removed only if it is not
- * currently running.
+ * Remove tasks by id/name; a task will be removed only if it is not currently running.
  * It returns a list of ids/names for all the removed tasks.
  */
 Cucu#del( String id | Array ids ) : Array
