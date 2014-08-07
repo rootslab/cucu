@@ -24,17 +24,23 @@ var log = console.log
     , interval0 = 100
     , interval1 = 200
     , interval = 1000
-    , fn0 = function () {
-        log( '> %s, left: %s.', inspect( id0 ), inspect( qq.ttable[ id0 ].times - 1 ) );
+    , fn0 = function ( done ) {
+        log( '> %s, left: %s.', inspect( id0 ), inspect( qq.ttable[ id0 ].left ) );
         ++cnt0;
+        // call done
+        done();
     }
-    , fn1 = function () {
-        log( '> %s, left: %s.', inspect( id1 ), inspect( qq.ttable[ id1 ].times - 1 ) );
+    , fn1 = function ( done ) {
+        log( '> %s, left: %s.', inspect( id1 ), inspect( qq.ttable[ id1 ].left ) );
+        arr = slice.call( arguments );
         if ( ++cnt1 === 1 ) {
             log( '> check fn1 arguments, should be: %s.', inspect( otherargs ) );
-            assert.deepEqual( slice.call( arguments ), otherargs, 'got: ' + inspect( slice.call( arguments ) ) );
+            assert.deepEqual( arr, [ done ].concat( otherargs ), 'got: ' + inspect( arr ) );
         }
+        // call done
+        done();
     }
+    , arr = null
     , args = [ 0, 1, 2, 3 ]
     , otherargs = [ 9, 99, 999 ]
     , scope = { a : 1 }

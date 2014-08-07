@@ -62,7 +62,7 @@ Cucu.running : Number
  *      , args : Array
  *      , scope : Object
  *      , status : Number | Object
- *      , times : Number
+ *      , repeat : Number
  *      // timestamps for task start, current iteration and task stop/halt/end.
  *      , stime : Number
  *      , itime : Number
@@ -105,10 +105,13 @@ Cucu.ttable : Object
 Cucu#add( String id, Function fn [, Array args [, Object scope [, Number interval ] ] ] ) : Number
 
 /*
- * Run a task by name/id. Optionally you can specify interval, optional arguments 
- * and the  max number of task executions.
+ * Run a task by name/id. Optionally you can specify interval, function arguments and 
+ * the max number executions for a task.
  * It returns 1 if task is started, 0 if the task is already running, -1 if no task
  * exists.
+ *
+ * NOTE: if 'times' option is specified, the scheduled function 'fn' will get, as the
+ * first argument, a function to execute when task will be done.
  */
 Cucu#run( String id [, Number interval [, Array args [, Number times ] ] ] ) : Number
 

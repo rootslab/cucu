@@ -41,7 +41,7 @@ var log = console.log
 
 log( '- #add a task with id: %s.', inspect( id ) );
 op = qq.add( id, fn, args, scope, interval );
-log( '- check #add operation result, should be: %s.', inspect( qq ) );
+
 log( '- check #add operation result, should be: %s.', inspect( 1 ) );
 assert.ok( op === 1, 'got: ' + inspect( op ) );
 
