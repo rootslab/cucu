@@ -1,5 +1,8 @@
 ###Cucu
 
+[![CODECLIMATE](https://codeclimate.com/github/rootslab/cucu/badges/gpa.svg)](https://codeclimate.com/github/rootslab/cucu)
+[![CODECLIMATE-TEST-COVERAGE](https://codeclimate.com/github/rootslab/cucu/badges/coverage.svg)](https://codeclimate.com/github/rootslab/cucu)
+
 [![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rootslab/cucu#mit-license)
 [![GITTIP](http://img.shields.io/gittip/rootslab.svg)](https://www.gittip.com/rootslab/)
 [![NPM DOWNLOADS](http://img.shields.io/npm/dm/cucu.svg)](http://npm-stat.com/charts.html?package=cucu)
