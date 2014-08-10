@@ -1,16 +1,16 @@
 ###Cucu
 
-[![CODECLIMATE](https://codeclimate.com/github/rootslab/cucu/badges/gpa.svg)](https://codeclimate.com/github/rootslab/cucu)
-[![CODECLIMATE-TEST-COVERAGE](https://codeclimate.com/github/rootslab/cucu/badges/coverage.svg)](https://codeclimate.com/github/rootslab/cucu)
+[![CODECLIMATE](http://img.shields.io/codeclimate/github/rootslab/cucu.svg?style=flat)](https://codeclimate.com/github/rootslab/cucu)
+[![CODECLIMATE-TEST-COVERAGE](http://img.shields.io/codeclimate/coverage/github/rootslab/cucu.svg?style=flat)](https://codeclimate.com/github/rootslab/cucu)
 
-[![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rootslab/cucu#mit-license)
-[![GITTIP](http://img.shields.io/gittip/rootslab.svg)](https://www.gittip.com/rootslab/)
-[![NPM DOWNLOADS](http://img.shields.io/npm/dm/cucu.svg)](http://npm-stat.com/charts.html?package=cucu)
+[![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/rootslab/cucu#mit-license)
+[![GITTIP](http://img.shields.io/gittip/rootslab.svg?style=flat)](https://www.gittip.com/rootslab/)
+[![NPM DOWNLOADS](http://img.shields.io/npm/dm/cucu.svg?style=flat)](http://npm-stat.com/charts.html?package=cucu)
 
-[![NPM VERSION](http://img.shields.io/npm/v/cucu.svg)](https://www.npmjs.org/package/cucu)
-[![TRAVIS CI BUILD](http://img.shields.io/travis/rootslab/cucu.svg)](http://travis-ci.org/rootslab/cucu)
-[![BUILD STATUS](http://img.shields.io/david/rootslab/cucu.svg)](https://david-dm.org/rootslab/cucu)
-[![DEVDEPENDENCY STATUS](http://img.shields.io/david/dev/rootslab/cucu.svg)](https://david-dm.org/rootslab/cucu#info=devDependencies)
+[![NPM VERSION](http://img.shields.io/npm/v/cucu.svg?style=flat)](https://www.npmjs.org/package/cucu)
+[![TRAVIS CI BUILD](http://img.shields.io/travis/rootslab/cucu.svg?style=flat)](http://travis-ci.org/rootslab/cucu)
+[![BUILD STATUS](http://img.shields.io/david/rootslab/cucu.svg?style=flat)](https://david-dm.org/rootslab/cucu)
+[![DEVDEPENDENCY STATUS](http://img.shields.io/david/dev/rootslab/cucu.svg?style=flat)](https://david-dm.org/rootslab/cucu#info=devDependencies)
 
 [![NPM GRAPH1](https://nodei.co/npm-dl/cucu.png)](https://nodei.co/npm/cucu/)
 
