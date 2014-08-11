@@ -37,6 +37,13 @@ var log = console.log
     , op = null
     ;
 
+log( '- #del an empty list should return an empty array: %s.', inspect( [] ) );
+op = qq.del( [] );
+assert.deepEqual( op, [] );
+log( '- #del without args should return an empty array: %s.', inspect( [] ) );
+op = qq.del();
+assert.deepEqual( op, [] );
+
 log( '- #add a task with id: %s.', inspect( id0 ) );
 op = qq.add( id0, fn0, args, scope, interval );
 

@@ -32,6 +32,7 @@ var log = console.log
     , interval0 = 700
     , interval1 = 1300
     , op = null
+    , timetable = null
     ;
 
 log( '- #add 2 tasks with id: %s.', inspect( [ id0, id1 ] ) );
@@ -59,8 +60,24 @@ assert.deepEqual( qq.active(), [ id0 ], 'got: ' + inspect( qq.active() ) );
 log( '- check if result length === Cucu.running, should be: %s.', inspect( qq.active().length ) );
 assert.ok( qq.active().length === qq.running, 'got: ' + inspect( qq.running ) );
 
-log( '- #stop tasks, ids: %s.', inspect( [ id0 ] ) );
-op = qq.stop( [ id0 ] );
+setTimeout( function () {
 
-log( '- check #active result, should be: %s.', inspect( [] ) );
-assert.deepEqual( qq.active(), [], 'got: ' + inspect( qq.active() ) );
+    timetable = qq.ttable[ id0 ].timetable();
+    log( '- check timetable result for task %s: %s.', id0, inspect( timetable ) );
+    assert.ok( timetable.times === 4 );
+    assert.ok( ! ~ timetable.etime );
+
+    log( '- #stop tasks, ids: %s.', inspect( [ id0 ] ) );
+    op = qq.stop( [ id0 ] );
+
+    timetable = qq.ttable[ id0 ].timetable();
+    log( '- check timetable result for task %s: %s.', id0, inspect( timetable ) );
+    assert.ok( ~ timetable.etime );
+
+    log( '- check #active result, should be: %s.', inspect( [] ) );
+    assert.deepEqual( qq.active(), [], 'got: ' + inspect( qq.active() ) );
+
+    log( '-check #size result, should be %s.', inspect( 2 ) );
+    assert.ok( qq.size(), 2 );
+
+}, 3000 );

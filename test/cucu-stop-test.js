@@ -35,6 +35,14 @@ var log = console.log
     , op = null
     ;
 
+
+log( '- #stop an empty list should return an empty array: %s.', inspect( [] ) );
+op = qq.stop( [] );
+assert.deepEqual( op, [] );
+log( '- #stop without args should return an empty array: %s.', inspect( [] ) );
+op = qq.stop();
+assert.deepEqual( op, [] );
+
 log( '- #add 2 tasks with id: %s.', inspect( [ id0, id1 ] ) );
 op = qq.add( id0, fn0, args, scope, interval );
 op = qq.add( id1, fn1, args, scope, interval );
