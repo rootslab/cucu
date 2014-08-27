@@ -14,7 +14,7 @@
 
 [![NPM GRAPH1](https://nodei.co/npm-dl/cucu.png)](https://nodei.co/npm/cucu/)
 
-[![NPM GRAPH2](https://nodei.co/npm/cucu.png?downloads=true&stars=true)](https://nodei.co/npm/cucu/)
+[![NPM GRAPH2](https://nodei.co/npm/cucu.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cucu/)
 
 > **_Cucu_**, a tiny module to schedule repeated execution of ( single process ) methods/tasks.
 
