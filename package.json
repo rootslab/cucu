@@ -1,40 +1,40 @@
 {
-  "name": "cucu",
-  "version": "0.10.1",
-  "description": "Cucu, a tiny module to schedule repeated execution of (single process) methods/tasks.",
-  "homepage": "https://github.com/rootslab/cucu",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/rootslab/cucu.git"
-  },
-  "keywords": [
-    "cucu",
-    "tasks",
-    "task",
-    "schedule",
-    "setInterval",
-    "single process task",
-    "sceduled execution",
-    "timers"
-  ],
-  "author": {
-    "name": "Guglielmo Ferri",
-    "email": "44gatti@gmail.com"
-  },
-  "dependencies": {
+  "name": "cucu"
+  , "version": "0.10.2"
+  , "description": "Cucu a tiny module to schedule repeated execution of (single process) methods/tasks."
+  , "homepage": "https://github.com/rootslab/cucu"
+  , "repository": {
+    "type": "git"
+    , "url": "git://github.com/rootslab/cucu.git"
+  }
+  , "keywords": [
+    "cucu"
+    , "tasks"
+    , "task"
+    , "schedule"
+    , "setInterval"
+    , "single process task"
+    , "sceduled execution"
+    , "timers"
+  ]
+  , "author": {
+    "name": "Guglielmo Ferri"
+    , "email": "44gatti@gmail.com"
+  }
+  , "dependencies": {
     "bolgia": ">=2.7.4"
-    },
-  "main": "index",
-  "engines": {
+  }
+  , "main": "index"
+  , "engines": {
     "node": ">=0.10.x"
-  },
-  "scripts": {
-    "test": "bash test/run.sh",
-    "bench": "bash bench/run.sh"
-  },
-  "license": "MIT",
-  "readmeFilename": "Readme.md",
-  "bugs": {
+  }
+  , "scripts": {
+    "test": "bash test/run.sh"
+    , "bench": "bash bench/run.sh"
+  }
+  , "license": "MIT"
+  , "readmeFilename": "Readme.md"
+  , "bugs": {
     "url": "https://github.com/rootslab/cucu/issues"
   }
 }
