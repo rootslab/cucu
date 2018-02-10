@@ -2,7 +2,7 @@
 
 [![NPM VERSION](http://img.shields.io/npm/v/cucu.svg?style=flat)](https://www.npmjs.org/package/cucu)
 [![CODACY BADGE](https://img.shields.io/codacy/b18ed7d95b0a4707a0ff7b88b30d3def.svg?style=flat)](https://www.codacy.com/public/44gatti/cucu)
-[![CODECLIMATE-TEST-COVERAGE](https://img.shields.io/codeclimate/coverage/github/rootslab/cucu.svg?style=flat)](https://codeclimate.com/github/rootslab/cucu)
+[![CODECLIMATE-TEST-COVERAGE](https://img.shields.io/codeclimate/c/rootslab/cucu.svg?style=flat)](https://codeclimate.com/github/rootslab/cucu)
 [![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/rootslab/cucu#mit-license)
 
 ![NODE VERSION](https://img.shields.io/node/v/cucu.svg)
